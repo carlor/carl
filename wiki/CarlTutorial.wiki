@@ -1,0 +1,33 @@
+#summary One-sentence summary of this page.
+
+= Hello, World! =
+As always, we must start by outputting the string {{{"hello world"}}} to standard output. In Carl, this is easily accomplished:
+
+{{{
+PrintLn "hello world"
+}}}
+
+Classes of the standard library are written starting with the upper case. It is recommended that your classes start with a lower case.
+
+= Basic Literals, Classes =
+To use a class, it only has to be mentioned as descending from something else, and Carl will know it's a class. To link a child to it's parent, the {{{:}}} operator is used. {{{|}}} is the "sibling" operator - it becomes the child of the parent.
+
+{{{
+parent : U # U is the Universal Class.
+bro : parent
+sis | bro
+# now bro and sis are children of "parent"
+}}}
+
+What's the use of the sibling operator? Check this out:
+
+{{{
+x : 4
+y : x
+x : 5
+PrintLn y
+}}}
+
+One would expect this to print {{{4}}}. Actually, this would produce undefined behavior. This is because {{{y}}} is a grandchild of {{{4}}}, not a child. When commanding {{{y : x}}}, you make {{{y}}} a child of {{{x}}} a child of {{{4}}}. You want to make it a sibling.
+
+Use the sibling operator when dealing with values, unless you know it should be the child operator.
