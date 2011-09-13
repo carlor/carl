@@ -1,0 +1,4 @@
+#summary A sort of lazy blog for where I am
+
+= Working on Expressions =
+Trying to work with parenthesese (however it's spelt).
